@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, RegistrationsController: 'users/registrations'
+  # , controllers: { registrations: 'users/registations' }
   resources :contacts
   get '/about' => 'pages#about'
   root 'pages#home'
