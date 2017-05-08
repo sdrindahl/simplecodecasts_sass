@@ -3,6 +3,12 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.alert-notice {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
 // body {
 //   background: #1FA2FF;  /* fallback for old browsers */
 //   background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
