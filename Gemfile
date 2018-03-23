@@ -6,11 +6,6 @@ gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
 
-# Use postgresql as the database for production
-group :production do
-    gem 'pg'
-    gem 'rails_12factor'
-end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
@@ -34,10 +29,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
-
-gem 'pry',        group: :development
 
 # Use devise for user auth
 gem 'devise', '~> 3.4.1'
@@ -62,3 +53,50 @@ gem 'paperclip', '~>4.2.1'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use postgresql as the database for production
+group :production do
+    gem 'pg'
+    gem 'rails_12factor'
+end
+
+group :development do
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+
+group :test do
+  gem 'minitest-reporters'
+  gem 'simplecov'
+  # Shoulda must be required manually for rspec.
+  gem 'shoulda', '~>3.5', require: false
+  gem 'shoulda-kept-assign-to', require: false
+  gem 'shoulda-kept-respond-with-content-type', require: false
+  gem 'shoulda-matchers', '~> 2.0', require: false
+  gem 'rack_session_access' # for accessing application session in capybara tests.
+  gem 'poltergeist'
+  gem 'poltergeist-suppressor' # Silence certain phantomjs warnings.
+  gem 'phantomjs', '~> 2.1.1.0'
+  gem 'pdf-reader'
+  # postdeploy:
+  gem 'awesome_print'
+  gem 'capybara'
+  gem 'capybara-email'
+  gem 'capybara-screenshot'
+  gem 'capybara-slow_finder_errors'
+  gem 'mail'
+  gem 'rspec'
+  gem 'rspec-instafail'
+  gem 'selenium-webdriver', '2.53.0'
+  gem 'config_spartan'
+end
+
+group :development, :test do
+  gem 'fakeweb'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'launchy'
+  gem 'pry'
+  gem 'rspec-rails'
+  gem 'rubocop'
+end
