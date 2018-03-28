@@ -26,8 +26,8 @@ feature 'Facebook', :post_deploy do
 
   scenario 'navigate to facebook login' do
     navigate_to_facebook_login
-    fill_in 'Email or Phone', with: 'sdrindahl@gmail'
-    fill_in 'Password', with: 'MinnesotaWild!!'
+    fill_in 'Email or Phone', with: 'test'
+    fill_in 'Password', with: 'test'
     click_button 'Log In'
     # binding.pry
     # click 'Messenger'
