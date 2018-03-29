@@ -19,9 +19,10 @@ feature 'Vikings', :post_deploy do
 
   scenario 'Twitter' do
     navigate_to_twitter
-    fill_in 'Phone, email, or username', with: 'barf@umn.edu'
-    fill_in 'Password', with: 'krypt!k', match: :first
+    fill_in 'Phone, email, or username', with: 'tbone3414@gmail.com'
+    fill_in 'Password', with: 'I_lovefootball34', match: :first
     click_button 'Log in'
+    expect(page).to have_link 'Rindahl34'
   end
 end
 
