@@ -16,6 +16,13 @@ feature 'Vikings', :post_deploy do
     # click_link 'Shop'
     click_link 'More'
   end
+
+  scenario 'Twitter' do
+    navigate_to_twitter
+    fill_in 'Phone, email, or username', with: 'barf@umn.edu'
+    fill_in 'Password', with: 'krypt!k', match: :first
+    click_button 'Log in'
+  end
 end
 
 # scenario 'navigate to twitter and fail to login' do
