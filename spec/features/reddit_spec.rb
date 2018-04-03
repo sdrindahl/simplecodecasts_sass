@@ -22,7 +22,11 @@ feature 'Vikings', :post_deploy do
     fill_in 'Phone, email, or username', with: 'tbone3414@gmail.com'
     fill_in 'Password', with: 'I_lovefootball34', match: :first
     click_button 'Log in'
-    expect(page).to have_link 'Rindahl34'
+    # find(:xpath, //*[@id="tweet-box-home-timeline"]/div)
+  #   # expect(page).to have_link 'Rindahl34'
+    # find(:xpath, //*[@id="Tweetstorm-tweet-box-0"]/div[2]/div[1]/div[2]/div[2]/div[2]/div[1].set("Hello this is my first tweet")
+  #   # click_button 'Tweet'
+  #   # find(:xpath, "//div[label='First Name']/input").set("text")
   end
 end
 
